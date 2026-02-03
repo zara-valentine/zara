@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Private ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="lock" class="lock-screen">
+  <h2>🔒 This moment is private</h2>
+  <p>Enter the password to continue 💖</p>
+  <input type="password" id="pass" placeholder="Password">
+  <button onclick="unlock()">Unlock 💕</button>
+  <p id="error"></p>
+</div>
+
+<div id="content" class="hidden">
+
+<audio id="bgMusic" src="song.mp3" autoplay loop></audio>
+<audio id="heartbeat" src="heartbeat.mp3"></audio>
+
+<div class="hearts"></div>
+
+<h1 class="name-glow">Zara 💖</h1>
+<p class="from">— from Sandeep ❤️</p>
+
+<h2 class="heading">Before I ask you something… let me tell you why you matter 💕</h2>
+
+<div class="box" id="box"></div>
+
+<div class="question hidden" id="question">
+  <h2>Will you be my Valentine? 💘</h2>
+  <button id="yes">YES 💖</button>
+  <button id="no">NO 😶</button>
+</div>
+
+<div class="final hidden" id="final">
+  <div id="typing"></div>
+  <div id="surprise" class="hidden"></div>
+  <div id="datecard" class="hidden"></div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

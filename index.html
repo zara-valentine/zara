@@ -1,44 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Zara ❤️</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zara ❤️</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- PASSWORD SCREEN -->
 <div id="passwordScreen" class="screen">
   <h2>🔒 This moment is private</h2>
   <p>Enter the password to continue 💖</p>
-  <input type="password" id="pass">
+  <input type="password" id="pass" placeholder="Password">
   <button onclick="unlock()">Unlock</button>
 </div>
 
-<div id="app" class="hidden">
+<!-- INTRO + COMPLIMENTS -->
+<div id="intro" class="hidden">
   <h1 class="glow">Zara ✨</h1>
-  <h2 id="intro">Before I ask you something… let me tell you why you matter 💕</h2>
-  <div id="box" class="box"></div>
-</div>
+  <p class="subtitle">
+    Before I ask you something… let me tell you why you matter 💕
+  </p>
 
-<div id="question" class="hidden screen">
-  <h2>Will you be my Valentine? 💘</h2>
-  <p>— Sandeep ❤️</p>
-  <button id="yes">YES ❤️</button>
-  <button id="no">NO 😶</button>
-</div>
-
-<div id="final" class="hidden screen pink">
-  <h1 class="yesText">💖 She said YES 💖</h1>
-  <p id="typing"></p>
-  <div class="dateCard">
-    <h3>💌 Valentine Date 💌</h3>
-    <p>With: Zara</p>
-    <p>From: Sandeep ❤️</p>
-    <p>Time: Anytime you want</p>
-    <p>Place: Wherever you smile 😊</p>
+  <div id="app" class="box">
+    <span id="boxText"></span>
   </div>
 </div>
+
+<!-- QUESTION -->
+<div id="question" class="hidden">
+  <div class="questionBox">
+    <p>Will you be my Valentine? 💘</p>
+    <span class="from">— Sandeep ❤️</span>
+  </div>
+
+  <div class="buttons">
+    <button id="yes">YES ❤️</button>
+    <button id="no">NO 😶</button>
+  </div>
+</div>
+
+<!-- FINAL SCREEN -->
+<div id="final" class="hidden">
+  <h1>💖 She said YES 💖</h1>
+
+  <p id="typing"></p>
+
+  <div class="dateCard">
+    <h3>💌 Valentine Date 💌</h3>
+    <p><b>With:</b> Zara</p>
+    <p><b>From:</b> Sandeep ❤️</p>
+    <p><b>Time:</b> Anytime you want</p>
+    <p><b>Place:</b> Wherever you smile 😊</p>
+  </div>
+</div>
+
+<audio id="song" src="song.mp3" loop></audio>
 
 <script src="script.js"></script>
 </body>

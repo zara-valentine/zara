@@ -1,49 +1,199 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Private ❤️</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Zara ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{
+  background:linear-gradient(135deg,#ff7aa2,#ff9dbb);
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  color:#fff;
+}
+
+/* ---------- PASSWORD ---------- */
+#passwordScreen{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  background:linear-gradient(135deg,#ff6f9f,#ff9dbb);
+  z-index:10;
+}
+
+#passwordScreen input{
+  padding:14px;
+  border-radius:12px;
+  border:none;
+  outline:none;
+  margin-top:20px;
+  width:220px;
+  text-align:center;
+  font-size:16px;
+}
+
+#passwordScreen button{
+  margin-top:15px;
+  padding:12px 30px;
+  border:none;
+  border-radius:20px;
+  background:#000;
+  color:#fff;
+  font-size:16px;
+}
+
+/* ---------- MAIN APP ---------- */
+#app{
+  display:none;
+  text-align:center;
+  max-width:320px;
+}
+
+.nameGlow{
+  font-size:32px;
+  font-weight:bold;
+  margin-bottom:10px;
+  animation:glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+  from{text-shadow:0 0 10px #fff;}
+  to{text-shadow:0 0 25px #ff4d88;}
+}
+
+.heading{
+  font-size:18px;
+  margin-bottom:15px;
+}
+
+.box{
+  background:rgba(255,255,255,0.25);
+  padding:25px;
+  border-radius:20px;
+  min-height:120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  transition:0.5s;
+}
+
+.buttons{
+  margin-top:25px;
+}
+
+button{
+  padding:14px 30px;
+  border:none;
+  border-radius:25px;
+  font-size:16px;
+}
+
+#yesBtn{
+  background:#fff;
+  color:#ff4d88;
+  margin-right:15px;
+}
+
+#noBtn{
+  background:#000;
+  color:#fff;
+  position:absolute;
+}
+
+/* ---------- DARK QUESTION BG ---------- */
+.dark{
+  background:linear-gradient(135deg,#1c1c1c,#000);
+}
+</style>
 </head>
+
 <body>
 
-<div id="lock" class="lock-screen">
-  <h2>🔒 This moment is private</h2>
-  <p>Enter the password to continue 💖</p>
+<!-- PASSWORD -->
+<div id="passwordScreen">
+  <h2>This is only for Zara 💖</h2>
   <input type="password" id="pass" placeholder="Password">
-  <button onclick="unlock()">Unlock 💕</button>
-  <p id="error"></p>
+  <button onclick="checkPass()">Enter</button>
 </div>
 
-<div id="content" class="hidden">
+<!-- MAIN APP -->
+<div id="app">
+  <div class="nameGlow">Zara ✨</div>
+  <div class="heading">Before I ask you something… let me tell you why you matter 💕</div>
+  <div class="box" id="textBox"></div>
 
-<audio id="bgMusic" src="song.mp3" autoplay loop></audio>
-<audio id="heartbeat" src="heartbeat.mp3"></audio>
-
-<div class="hearts"></div>
-
-<h1 class="name-glow">Zara 💖</h1>
-<p class="from">— from Sandeep ❤️</p>
-
-<h2 class="heading">Before I ask you something… let me tell you why you matter 💕</h2>
-
-<div class="box" id="box"></div>
-
-<div class="question hidden" id="question">
-  <h2>Will you be my Valentine? 💘</h2>
-  <button id="yes">YES 💖</button>
-  <button id="no">NO 😶</button>
+  <div class="buttons" id="buttons" style="display:none;">
+    <button id="yesBtn">YES ❤️</button>
+    <button id="noBtn">NO 😶</button>
+  </div>
 </div>
 
-<div class="final hidden" id="final">
-  <div id="typing"></div>
-  <div id="surprise" class="hidden"></div>
-  <div id="datecard" class="hidden"></div>
-</div>
+<audio id="song" src="song.mp3" loop></audio>
 
-</div>
+<script>
+const compliments=[
+ "Because your smile can fix a bad day 💖",
+ "Because you make everything feel lighter ✨",
+ "Because Zara, you’re rare 💎",
+ "Because life feels better with you in it 🌸",
+ "Because my heart feels calm around you ❤️"
+];
 
-<script src="script.js"></script>
+let i=0;
+const box=document.getElementById("textBox");
+const buttons=document.getElementById("buttons");
+
+function checkPass(){
+  if(document.getElementById("pass").value==="Zara"){
+    document.getElementById("passwordScreen").style.display="none";
+    document.getElementById("app").style.display="block";
+    document.getElementById("song").play();
+    showCompliments();
+  }else{
+    alert("Wrong password 😶");
+  }
+}
+
+function showCompliments(){
+  box.innerText=compliments[i];
+  let interval=setInterval(()=>{
+    i++;
+    if(i<compliments.length){
+      box.innerText=compliments[i];
+    }else{
+      clearInterval(interval);
+      setTimeout(showQuestion,2000);
+    }
+  },4000);
+}
+
+function showQuestion(){
+  document.body.classList.add("dark");
+  box.innerHTML="Will you be my Valentine? 💘<br><br><small>— Sandeep</small>";
+  buttons.style.display="block";
+}
+
+document.getElementById("noBtn").addEventListener("mouseover",()=>{
+  const x=Math.random()*(window.innerWidth-100);
+  const y=Math.random()*(window.innerHeight-100);
+  noBtn.style.left=x+"px";
+  noBtn.style.top=y+"px";
+});
+
+document.getElementById("yesBtn").addEventListener("click",()=>{
+  box.innerHTML="Zara ❤️<br>You just made my heart the happiest place 💞<br><br>Happy Valentine’s Day 🌹";
+  buttons.style.display="none";
+});
+</script>
+
 </body>
 </html>

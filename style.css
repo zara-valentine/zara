@@ -1,62 +1,106 @@
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:linear-gradient(135deg,#ff6f9f,#ff9dbb);
-color:white;
-text-align:center;
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.hidden{display:none}
-
-.screen{
-position:fixed;
-inset:0;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.glow{
-font-size:32px;
-text-shadow:0 0 15px #fff;
+.hidden {
+  display: none;
 }
 
-.box{
-margin:20px;
-padding:25px;
-background:rgba(255,255,255,0.25);
-border-radius:20px;
-font-size:18px;
+.screen {
+  background: rgba(255,255,255,0.25);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
 }
 
-button{
-padding:12px 25px;
-border:none;
-border-radius:20px;
-font-size:16px;
-margin:8px;
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
 }
 
-#no{position:absolute}
-
-.pink{
-background:linear-gradient(135deg,#ff6f9f,#ff9dbb);
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.yesText{
-font-size:30px;
-animation:pulse 1s infinite alternate;
+.glow {
+  font-size: 36px;
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
 }
 
-@keyframes pulse{
-from{transform:scale(1)}
-to{transform:scale(1.05)}
+.subtitle {
+  color: #fff;
+  margin-bottom: 20px;
 }
 
-.dateCard{
-margin-top:20px;
-background:rgba(255,255,255,0.25);
-padding:20px;
-border-radius:20px;
+.box {
+  background: rgba(255,255,255,0.3);
+  padding: 20px;
+  border-radius: 20px;
+  min-height: 70px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.questionBox {
+  background: rgba(255,255,255,0.3);
+  padding: 20px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.from {
+  display: block;
+  margin-top: 10px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+#yes {
+  background: white;
+  color: #ff5f8a;
+  margin-right: 15px;
+}
+
+#no {
+  background: black;
+  color: white;
+  position: absolute;
+}
+
+#final h1 {
+  color: white;
+}
+
+#typing {
+  color: white;
+  margin: 20px;
+  font-size: 18px;
+}
+
+.dateCard {
+  background: rgba(255,255,255,0.3);
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
 }

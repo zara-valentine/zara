@@ -3,7 +3,12 @@ const compliments = [
   "Because you make everything brighter ✨",
   "Because you are effortlessly beautiful 💖",
   "Because my heart feels calm around you 💕",
-  "Because life feels better with you 🌸"
+  "Because life feels better with you 🌸",
+  "Because you turn ordinary moments into memories 💝",
+  "Because your laugh is my favorite sound 💓",
+  "Because you make my bad days feel lighter 🌷",
+  "Because my heart chose you without asking ❤️",
+  "Because you are… simply you 💗"
 ];
 
 let i = 0;

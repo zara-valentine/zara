@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zara ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="passwordScreen" class="screen">
+<h2>🔒 This moment is private</h2>
+<p>Enter the password to continue 💖</p>
+<input type="password" id="pass" placeholder="Password">
+<button onclick="unlock()">Unlock</button>
+</div>
+
+<div id="app" class="hidden">
+<h1 class="glow">Zara ✨</h1>
+<p class="subtitle">Before I ask you something… let me tell you why you matter 💕</p>
+<div id="box" class="box"></div>
+</div>
+
+<div id="question" class="hidden">
+<div class="questionBox">
+<h2>Will you be my Valentine? 💘</h2>
+<p class="from">— Sandeep ❤️</p>
+<div class="buttons">
+<button id="yes">YES ❤️</button>
+<button id="no">NO 😶</button>
+</div>
+</div>
+</div>
+
+<div id="final" class="hidden">
+<h1>💖 She said YES 💖</h1>
+<p id="typing"></p>
+<div class="dateCard">
+💌 Valentine Date 💌<br><br>
+With: Zara<br>
+From: Sandeep ❤️<br>
+Time: Anytime you want<br>
+Place: Wherever you smile 😊
+</div>
+</div>
+
+<audio id="bgMusic" src="song.mp3" loop></audio>
+<script src="script.js"></script>
+</body>
+</html>
